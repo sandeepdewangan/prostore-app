@@ -4,7 +4,7 @@ import React from "react";
 const ProductCard = ({ product }: { product: any }) => {
   return (
     <div>
-      <Image src={product.imageUrl} alt="Product" width={100} height={150} />
+      <Image src={product.images[0]} alt="Product" width={150} height={150} />
       <h1>{product.title}</h1>
       <h1>{product.description}</h1>
       <h1>💲{product.price}</h1>

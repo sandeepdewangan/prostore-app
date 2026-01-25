@@ -1,15 +1,17 @@
 import ProductList from "@/components/product/product_list";
-import { products } from "@/db/sample_data";
+import { getLatestProducts } from "@/lib/actions/products";
 
 export const metadata = {
   title: "Home",
 };
 
 const Home = async () => {
+  const latestProducts = await getLatestProducts(3);
+
   return (
     <div>
       {/* Products Tile */}
-      <ProductList data={products.slice(0, 3)} title="Latest Products" />
+      <ProductList data={latestProducts} title="Latest Products" />
     </div>
   );
 };
