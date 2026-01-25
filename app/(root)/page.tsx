@@ -1,14 +1,17 @@
-import React from "react";
-
-// const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
+import ProductList from "@/components/product/product_list";
+import products from "@/db/sample_data";
 
 export const metadata = {
   title: "Home",
 };
 
 const Home = async () => {
-  // await delay(5000);
-  return <div>Home</div>;
+  return (
+    <div>
+      {/* Products Tile */}
+      <ProductList data={products.slice(0, 3)} title="Latest Products" />
+    </div>
+  );
 };
 
 export default Home;
