@@ -1,5 +1,5 @@
 import ProductList from "@/components/product/product_list";
-import products from "@/db/sample_data";
+import { products } from "@/db/sample_data";
 
 export const metadata = {
   title: "Home",
