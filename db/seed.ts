@@ -1,5 +1,6 @@
 
-import { prisma } from "@/lib/prisma";
+// import { prisma } from "@/lib/prisma";
+import { prisma } from "./prisma";
 import {products} from "./sample_data";
 
 async function main(){

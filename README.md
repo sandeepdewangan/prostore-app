@@ -9,3 +9,7 @@
 5. PostgreSQL - Neon
 6. Prima for ORM
 7. Zod for Data Validation
+
+## Deployment to Vercel
+
+npm run build
