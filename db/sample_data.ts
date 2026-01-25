@@ -1,49 +1,90 @@
-const products = [
+export const products = [
   {
-    id: 1,
-    title: "Wireless Bluetooth Headphones",
-    price: 2999,
+    name: "Wireless Noise Cancelling Headphones",
+    slug: "wireless-noise-cancelling-headphones",
+    category: "Electronics",
+    images: [
+      "https://example.com/images/headphones-1.jpg",
+      "https://example.com/images/headphones-2.jpg"
+    ],
+    brand: "SoundMax",
     description:
-      "High-quality wireless headphones with noise cancellation and 30 hours of battery life.",
-    imageUrl:
-      "https://images.unsplash.com/photo-1518443895914-9f7f4f6e6c9b"
+      "Premium wireless headphones with active noise cancellation, deep bass, and up to 30 hours of battery life.",
+    stock: 25,
+    price: 8999.99,
+    rating: 4.6,
+    numReviews: 124,
+    isFeatured: true,
+    banner: "https://example.com/banners/headphones-banner.jpg"
   },
   {
-    id: 2,
-    title: "Smart Watch Series 5",
-    price: 5499,
+    name: "Smart Fitness Watch",
+    slug: "smart-fitness-watch",
+    category: "Wearables",
+    images: [
+      "https://example.com/images/watch-1.jpg"
+    ],
+    brand: "FitPulse",
     description:
-      "Water-resistant smart watch with fitness tracking, heart-rate monitor, and GPS.",
-    imageUrl:
-      "https://images.unsplash.com/photo-1523275335684-37898b6baf30"
+      "Track your heart rate, steps, sleep, and workouts with this sleek and water-resistant fitness watch.",
+    stock: 40,
+    price: 4999.00,
+    rating: 4.3,
+    numReviews: 89,
+    isFeatured: false,
+    banner: null
   },
   {
-    id: 3,
-    title: "Gaming Mouse RGB",
-    price: 1499,
+    name: "Gaming Mechanical Keyboard",
+    slug: "gaming-mechanical-keyboard",
+    category: "Computer Accessories",
+    images: [
+      "https://example.com/images/keyboard-1.jpg",
+      "https://example.com/images/keyboard-2.jpg"
+    ],
+    brand: "KeyBlaze",
     description:
-      "Ergonomic gaming mouse with adjustable DPI and customizable RGB lighting.",
-    imageUrl:
-      "https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7"
+      "RGB mechanical keyboard with blue switches, customizable lighting, and anti-ghosting keys.",
+    stock: 18,
+    price: 3499.50,
+    rating: 4.7,
+    numReviews: 210,
+    isFeatured: true,
+    banner: "https://example.com/banners/keyboard-banner.jpg"
   },
   {
-    id: 4,
-    title: "Mechanical Keyboard",
-    price: 3999,
+    name: "Portable Bluetooth Speaker",
+    slug: "portable-bluetooth-speaker",
+    category: "Audio",
+    images: [
+      "https://example.com/images/speaker-1.jpg"
+    ],
+    brand: "BoomBox",
     description:
-      "Mechanical keyboard with blue switches, backlit keys, and durable aluminum body.",
-    imageUrl:
-      "https://images.unsplash.com/photo-1517336714731-489689fd1ca8"
+      "Compact Bluetooth speaker with powerful sound, deep bass, and 12 hours of playtime.",
+    stock: 60,
+    price: 2599.00,
+    rating: 4.2,
+    numReviews: 56,
+    isFeatured: false,
+    banner: null
   },
   {
-    id: 5,
-    title: "Portable Bluetooth Speaker",
-    price: 2499,
+    name: "Ergonomic Office Chair",
+    slug: "ergonomic-office-chair",
+    category: "Furniture",
+    images: [
+      "https://example.com/images/chair-1.jpg",
+      "https://example.com/images/chair-2.jpg"
+    ],
+    brand: "ComfortPro",
     description:
-      "Compact Bluetooth speaker with deep bass, waterproof design, and 12-hour playtime.",
-    imageUrl:
-      "https://images.unsplash.com/photo-1585386959984-a41552231692"
+      "Ergonomic office chair with lumbar support, adjustable height, and breathable mesh back.",
+    stock: 12,
+    price: 11999.00,
+    rating: 4.5,
+    numReviews: 34,
+    isFeatured: true,
+    banner: "https://example.com/banners/chair-banner.jpg"
   }
 ];
-
-export default products;
