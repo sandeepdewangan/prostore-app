@@ -1,4 +1,5 @@
 import Header from "@/components/shared/header/Header";
+import { Toaster } from "@/components/ui/sonner";
 
 export default function RootLayout({
   children,
@@ -9,6 +10,7 @@ export default function RootLayout({
     <div className="w-4xl mx-auto bg-gray-200">
       <Header />
       {children}
+      <Toaster />
     </div>
   );
 }

@@ -1,4 +1,5 @@
-import { Button } from "@/components/ui/button";
+import AddToCartButton from "@/components/product/add_to_cart_button";
+
 import { getProductBySlug } from "@/lib/actions/products";
 import { notFound } from "next/navigation";
 import React from "react";
@@ -13,7 +14,9 @@ const ProductDetail = async (props: { params: Promise<{ slug: string }> }) => {
       <div>ℹ️{product.description}</div>
       <div>💲{product.price}</div>
       <div>⭐{product.rating}</div>
-      <Button variant="outline">Add to Cart</Button>
+      <AddToCartButton
+        product={{ id: product.id, price: product.price, name: product.name }}
+      />
     </div>
   );
 };

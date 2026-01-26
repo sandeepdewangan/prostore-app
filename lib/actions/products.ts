@@ -16,3 +16,11 @@ export async function getLatestProducts(limit:number) {
 export async function getProductBySlug(slug:string) {
     return await prisma.product.findFirst({where: {slug:slug}});
 }
+
+// Add to cart
+export async function addItemToCart(product) {
+    return {
+        success:true,
+        message:"Product added to cart!",
+    };
+}

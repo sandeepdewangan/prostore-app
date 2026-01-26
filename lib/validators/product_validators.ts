@@ -1,5 +1,7 @@
 import {z} from 'zod';
 
+const currency = z.string().refine((val) => /^\d+(\.\d{2})$/.test(val.toString()),{ message: "Must have exactly 2 decimal places" });
+
 // Schema for inserting products
 export const insertProductSchema = z.object({
     name: z.string().min(3, 'Name must be of atleast 3 characters'),
@@ -11,6 +13,6 @@ export const insertProductSchema = z.object({
     images: z.array(z.string()).min(1, 'Product must have atleast 1 image'),
     isFeatured: z.boolean(),
     banner:z.string().nullable(),
-    price:  z.string().refine((val) => /^\d+(\.\d{2})$/.test(val.toString()),{ message: "Must have exactly 2 decimal places" }
-  ),
+    price:  currency,
 });
+
