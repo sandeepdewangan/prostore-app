@@ -1,3 +1,21 @@
+import bcrypt from "bcryptjs";
+
+export const users = [
+  {
+    name: 'sandeep',
+    email: 'admin@gmail.com',
+    password: bcrypt.hashSync("sandeep", 10),
+    role: 'admin',
+    address: {"street": 'raipur', "pin":"492001"},
+  },
+  {
+    name: 'chandu',
+    email: 'chandu@gmail.com',
+    password: bcrypt.hashSync("chandu", 10),
+    role: 'user',
+    address: {"street": 'raipur', "pin":"492003"},
+  },
+];
 export const products = [
   {
     name: "Wireless Noise Cancelling Headphones",

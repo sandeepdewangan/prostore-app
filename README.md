@@ -14,3 +14,7 @@
 ## Deployment to Vercel
 
 npm run build
+
+## Seeding the DB
+
+`npx tsx .\db\seed.ts`
