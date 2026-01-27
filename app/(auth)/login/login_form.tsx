@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { loginWithCredentials } from "@/lib/actions/user";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 import React from "react";
 import { useFormState, useFormStatus } from "react-dom";
 
@@ -11,6 +12,9 @@ const LoginForm = () => {
     success: false,
     message: "",
   });
+  const searchParams = useSearchParams();
+  const callbackUrl = searchParams.get("callbackUrl") || "/";
+
   const SignInButton = () => {
     const { pending } = useFormStatus();
     return (
@@ -21,6 +25,7 @@ const LoginForm = () => {
   return (
     <div>
       <form action={action}>
+        <input type="hidden" name="callbackUrl" value={callbackUrl} />
         <input type="email" placeholder="Email Id" name="email" required />
         <input type="password" placeholder="abc123@" name="password" required />
         <SignInButton />

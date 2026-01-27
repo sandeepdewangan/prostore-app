@@ -3,10 +3,13 @@ import LoginForm from "./login_form";
 import { auth } from "@/auth";
 import { redirect } from "next/navigation";
 
-const Login = async () => {
+const Login = async (props: {
+  searchParams: Promise<{ callbackUrl: string }>;
+}) => {
+  const { callbackUrl } = await props.searchParams;
   const session = await auth();
   if (session) {
-    return redirect("/");
+    return redirect(callbackUrl || "/");
   }
   return (
     <>
