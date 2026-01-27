@@ -1,6 +1,7 @@
-import { Feather, LogIn, ShoppingBag } from "lucide-react";
+import { Feather, ShoppingBag, UserIcon } from "lucide-react";
 import Link from "next/link";
 import React from "react";
+import AppUserIcon from "../user_icon";
 
 const Header = () => {
   return (
@@ -14,8 +15,7 @@ const Header = () => {
         <Link href="/cart">Cart</Link>
       </span>
       <span className="flex">
-        <LogIn />
-        <Link href="/login">Login</Link>
+        <AppUserIcon />
       </span>
     </div>
   );
