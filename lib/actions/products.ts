@@ -18,7 +18,8 @@ export async function getProductBySlug(slug:string) {
 }
 
 // Add to cart
-export async function addItemToCart(product) {
+export async function addItemToCart(product:any) {
+    console.log(product);
     return {
         success:true,
         message:"Product added to cart!",

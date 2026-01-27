@@ -6,7 +6,7 @@ import { addItemToCart } from "@/lib/actions/products";
 import { useRouter } from "next/navigation";
 import { useTransition } from "react";
 
-const AddToCartButton = ({ product }) => {
+const AddToCartButton = ({ product }: any) => {
   const [isPending, startTransition] = useTransition();
   const router = useRouter();
 
