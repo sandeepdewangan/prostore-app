@@ -9,3 +9,15 @@ export function cn(...inputs: ClassValue[]) {
 export function convertToPlainObject<T>(value:T):T{
   return JSON.parse(JSON.stringify(value));
 }
+
+// Format errors
+export function formatError(error:any){
+  if(error.name === 'ZodError'){
+      return JSON.parse(error.message).map((err: any) => err.message).join(". ");
+  }else if(error.name === 'PrismaClientKnownRequestError'){
+      const field = error.meta?.target ? error.meta.target[0] : 'Field';
+      return `${field.charAt(0).toUpperCase() + field.slice(1)} already exists`
+  }else{
+    return typeof error.message === 'string' ? error.message :JSON.stringify(error.message);
+  }
+} 
