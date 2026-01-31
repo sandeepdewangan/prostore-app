@@ -3,6 +3,7 @@ import { PrismaAdapter } from "@auth/prisma-adapter"
 import { prisma } from "@/db/prisma"
 import Credentials from "next-auth/providers/credentials"
 import { compareSync } from "bcryptjs"
+import { NextResponse } from "next/server"
 
  
 export const { handlers, signIn, signOut, auth } = NextAuth({
@@ -62,6 +63,21 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
           token.role = user.role;
         }
         return token;
-    }
+    },
+    authorized({request, auth}: any){
+      if(!request.cookies.get('sessionCartId')){
+        const sessionCartId = crypto.randomUUID();
+        const newRequestHeaders = new Headers(request.Headers); 
+        const response = NextResponse.next({
+          request:{
+            headers: newRequestHeaders,
+          }
+        });
+        response.cookies.set('sessionCartId', sessionCartId);
+        return response;
+      }else{
+        return true;
+      }
+    },
   }
 })

@@ -15,7 +15,14 @@ const ProductDetail = async (props: { params: Promise<{ slug: string }> }) => {
       <div>💲{product.price}</div>
       <div>⭐{product.rating}</div>
       <AddToCartButton
-        product={{ id: product.id, price: product.price, name: product.name }}
+        product={{
+          id: product.id,
+          price: product.price,
+          name: product.name,
+          slug: product.slug,
+          qty: 1,
+          image: product.images![0],
+        }}
       />
     </div>
   );

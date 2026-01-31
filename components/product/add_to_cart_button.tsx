@@ -33,7 +33,7 @@ const AddToCartButton = ({ product }: any) => {
   return (
     <div>
       <Button variant="outline" onClick={handleAddToCart}>
-        {isPending ? "Loading..." : "Show Toast"}
+        {isPending ? "Loading..." : "Add to Cart"}
       </Button>
     </div>
   );
